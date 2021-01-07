@@ -7,7 +7,7 @@ void Usage(int argc, char *argv[]);
 class racional{
     private:
         int nume1, deno1, nume2, deno2;
-        int sumsubtdeno, sumnume, subtnume, mulnume, muldeno, divnume, divdeno, medianume, mediadeno;
+        int sumsubtdeno, sumnume, subtnume, mulnume, muldeno, divnume, divdeno, medianume, mediadeno, mediatodo;
     public:
         racional(int,int,int,int);
         void mostrarfraccion(std::ofstream& file);
@@ -49,6 +49,7 @@ void racional::div(std::ofstream & file){
 void racional::media(std::ofstream & file){ 
     medianume = (nume1 + nume2) / 2;
     mediadeno = (deno1 + deno2) / 2;
+    mediatodo = (deno2 * nume1 + deno1 * nume2) / 2;
     file << "la media de los numeradores es: " << medianume << std::endl;
     file << "la media de los denominadores es: " << mediadeno << std::endl;
 }
